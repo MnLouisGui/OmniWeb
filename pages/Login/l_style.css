@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Protest+Revolution&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Germania One', system-ui;
+} 
+
+.nav{
+    position: fixed;
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 90px;
+    width: 100%;
+}
+
+.navlogo{
+    margin: 0% 8%;
+    display: flex;
+    align-items: center;
+}
+.imglogo, .logo{
+    margin: 0px, 40px, 0px, 0px;
+    padding: 30px, 0px, 0px;
+    width: 80px;
+    height: 80px;
+}
+
+.a1{
+    padding: 47px 7px 7px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+
+a{
+    text-decoration: none;
+  }
+a.links{
+    display: none;
+}
+
+p{
+    margin: 10px;
+    font-size: 20px;
+}
+
+body{
+ background-color: #4b4646;
+ 
+}
+
+.link{
+    font-size: 16px;
+}
+
+#cadastro, 
+#login{
+  position: absolute;
+  color: white;
+  top: 25%;
+  left: 5%;
+  padding: 30px;
+  width: 400px;
+  margin: 50px;
+  background: #000000;
+   
+  -webkit-box-shadow: 5px;
+  border-radius: 5px;
+   
+  -webkit-animation-duration: 0.5s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-fill-mode: both;
+ 
+  animation-duration: 0.5s;
+  animation-timing-function: ease;
+  animation-fill-mode: both;
+}
+
+#paracadastro:target ~ .content #cadastro,
+#paralogin:target ~ .content #login{
+  z-index: 2;
+  -webkit-animation-name: fadeInLeft;
+  animation-name: fadeInLeft;
+ 
+  -webkit-animation-delay: .1s;
+  animation-delay: .1s;
+}
+
+#registro:target ~ .content #login,
+#paralogin:target ~ .content #cadastro{
+  -webkit-animation-name: fadeOutLeft;
+  animation-name: fadeOutLeft;
+}
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+}
+   
+  @keyframes fadeInLeft {
+    0% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+}
+   
+  /*fadeOutLeft*/
+  @-webkit-keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      -webkit-transform: translateX(-20px);
+    }
+}
+   
+@keyframes fadeOutLeft {
+    0% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(-20px);
+    }
+}
+
+input[type=submit]{
+    padding: 5px;
+    width: 80px;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    font-size: 16px;
+    border-style: none;
+}
+input[type=submit]:hover{
+    padding: 5px;
+    width: 80px;
+    animation: initial;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 10px;
+    scale: 1.1;
+
+    transition: 500ms linear;
+    font-size: 16px;
+    border-style: none;
+}
+
+input[type=text], input[type=password], input[type=email]{
+    justify-self: center;
+    color: white;   
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: black;
+    padding: 5px 20px 5px 40px;
+}
+input[type=email]{
+    background-image: url('l_img/email.png');
+    background-position: 10px 5px; 
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+input[type=text]{
+    background-image: url('l_img/user.png');
+    background-position: 10px 5px; 
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+input[type=password]{
+    background-image: url('l_img/eye.png');
+    background-position: 10px 5px; 
+    background-size: 20px;
+    background-repeat: no-repeat;
+}
+

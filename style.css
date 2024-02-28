@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Protest+Revolution&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Germania One', system-ui;
+}
+
+.nav{
+    position: fixed;
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    height: 90px;
+    width: 100%;
+}
+
+.navlogo{
+    margin: 0% 8%;
+    display: flex;
+    align-items: center;
+}
+.imglogo, .logo{
+    margin: 0px, 40px, 0px, 0px;
+    padding: 30px, 0px, 0px;
+    width: 80px;
+    height: 80px;
+}
+
+.a1{
+    padding: 47px 7px 7px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+.global{
+    line-height: 24px;
+
+    position: absolute;
+    margin: 0px 10px;
+
+    height: 21px;
+    right: 27px;
+    top: 16px;
+}.a2{
+    color: white;
+    margin: 10px;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.add{
+    background-color: blue;
+    width: 10px;
+    height: 100000px;
+}
