@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="l_style.css">
-    <link rel="icon" type="image/x-icon" href="/assets/img/logo1.png">
+    <link rel="icon" type="image/x-icon" href="l_img/logo1.png">
     <title>OmniGames</title>
 </head>
 <body>
@@ -14,34 +14,55 @@
         <div class="logo">
             <img class="imglogo" src="l_img/logo1.png">
         </div>
-        <h1>OmniGames</h1>
+        <a id=backhome href="../../index.html"><h1>OMINIGAMES</h1></a>
     </div>
   </div>
 
     <div class="container" >
       <a class="links" id="paracadastro"></a>
       <a class="links" id="paralogin"></a>
+      <a class="links" id="pararecu"></a>
        
-      <div class="content">      
+      <div class="content">
+        <!--RECU--> 
+        <div id="recuperação">
+          <form method="post" action="">
+            <h1>Recuperação de senha</h1>            
+            <p> 
+              <label for="email_cad">Email</label>
+              <input id="email_cad" name="email_cad" required="required" type="email" placeholder="Seuemail@gmail.com"/> 
+            </p>                      
+            <p> 
+              <input type="submit" value="Recuperar"/> 
+            </p>          
+            <p class="link">  
+              Lembrou?
+              <a href="#paralogin"> Ir para Login </a>
+            </p>
+            <br>
+            <br>
+            <br>  
+          </form>
+        </div>     
         <!--LOGIN-->
         <div id="login">
-          <form method="post" action=""> 
+          <form> 
             <h1>Login</h1> 
             <p> 
-              <label for="nome_login">Usuário</label>
-              <input id="nome_login" name="nome_login" required="required" type="text" placeholder="Usuário"/>
+              <label>Email</label>
+              <input id="email" name="email" required="required" type="email" placeholder="Email"/>
             </p>
             <p> 
-              <label for="senha_login">Sua senha</label>
-              <input id="senha_login" name="senha_login" required="required" type="password" placeholder="senha" /> 
+              <label>Sua senha</label>
+              <input id="password" name="password" required="required" type="password" placeholder="Senha" /> 
             </p>             
             <p> 
-              <input type="checkbox" name="manterlogado" id="manterlogado" value="" /> 
-              <label for="manterlogado">Manter-me logado</label>
-            </p>            
-            <p> 
-              <input onclick()="" type="submit" value="Logar" /> 
-            </p>        
+              <input onclick="login()" type="submit" value="Logar" /> 
+            </p>
+            <p class="link">
+              Esqueceu a senha?
+              <a href="#pararecu">Recupere aqui</a>
+            </p>                    
             <p class="link">
               Ainda não tem conta?
               <a href="#paracadastro">Cadastre-se</a>
@@ -50,18 +71,18 @@
         </div>   
         <!--CADASTRO-->
         <div id="cadastro">
-          <form method="post" action=""> 
+          <form> 
             <h1>Cadastro</h1>              
             <p> 
-              <label for="nome_cad">Usuário</label>
+              <label>Usuário</label>
               <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
             </p>            
             <p> 
-              <label for="email_cad">Seu e-mail</label>
+              <label>Seu e-mail</label>
               <input id="email_cad" name="email_cad" required="required" type="email" placeholder="Seuemail@gmail.com"/> 
             </p>          
             <p> 
-              <label for="senha_cad">Sua senha</label>
+              <label>Sua senha</label>
               <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="senha"/>
             </p>             
             <p> 
@@ -76,4 +97,18 @@
       </div>
     </div>  
   </body>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+  <script src="login.js"></script>
+  <script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDJPY2liWzFfGVHa-KFDTQVlLX0bB2sciA",
+      authDomain: "login-ce4de.firebaseapp.com",
+      projectId: "login-ce4de",
+      storageBucket: "login-ce4de.appspot.com",
+      messagingSenderId: "1079447080702",
+      appId: "1:1079447080702:web:11c63936eb02a4fc105faf"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </html>
