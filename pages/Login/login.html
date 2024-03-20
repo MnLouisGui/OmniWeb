@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="l_img/logo1.png">
     <title>OmniGames</title>
 </head>
-<body>
+<body >
   <!--BARRA NAV-->
   <div class="nav">
     <div class="navlogo">
@@ -48,16 +48,16 @@
         <div id="login">
           <form> 
             <h1>Login</h1> 
-            <p> 
+            <p>
               <label>Email</label>
-              <input id="email" name="email" required="required" type="email" placeholder="Email"/>
+              <input type="email" name="email" id="email" placeholder="seu@email.com" onchange="onChangeEmail()"/>
             </p>
             <p> 
-              <label>Sua senha</label>
-              <input id="password" name="password" required="required" type="password" placeholder="Senha" /> 
+              <label>Senha</label>
+              <input type="password" name="password" id="password" placeholder="Senha" onchange="onChangePassword()"/>
             </p>             
             <p> 
-              <input onclick="login()" type="submit" value="Logar" /> 
+              <button type="button" class="solid" id="login-button"  onclick="login()">Logar</button> 
             </p>
             <p class="link">
               Esqueceu a senha?
@@ -100,6 +100,8 @@
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
   <script src="login.js"></script>
+  <script src="validations.js"></script>
+  <script src="loading.js"></script>
   <script>
     const firebaseConfig = {
       apiKey: "AIzaSyDJPY2liWzFfGVHa-KFDTQVlLX0bB2sciA",

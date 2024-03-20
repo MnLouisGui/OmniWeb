@@ -6,6 +6,10 @@
     font-family: 'Germania One', system-ui;
 } 
 
+h1{
+  margin-bottom: 8px;
+}
+
 .nav{
     position: fixed;
     background-color: black;
@@ -149,7 +153,7 @@ body{
     }
 }
 
-input[type=submit]{
+input[type=submit], button{
     padding: 5px;
     width: 80px;
     border-top-left-radius: 10px;
@@ -157,7 +161,7 @@ input[type=submit]{
     font-size: 16px;
     border-style: none;
 }
-input[type=submit]:hover{
+input[type=submit]:hover, button:hover{
     padding: 5px;
     width: 80px;
     animation: initial;
@@ -199,4 +203,34 @@ input[type=password]{
     background-size: 20px;
     background-repeat: no-repeat;
 }
+
+button {
+  cursor: pointer;
+}
+button:active {
+  opacity: 0.8;
+}
+button[disabled] {
+  opacity: 0.8;
+}
+
+.clear {
+  background: transparent;
+  border: none;
+  color: white;
+}
+.solid {
+  background: white;
+  border: none;
+}
+.outline {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+}
+
+.error {
+  color: white;
+  display: none;
+} 
 
