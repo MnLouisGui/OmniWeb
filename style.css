@@ -156,3 +156,39 @@ a{
 }.social_links{
     padding: 0px 10px;
 }
+
+input[type=text]{
+    justify-self: center;
+    color: white;   
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: black;
+    padding: 5px 20px 5px 20px;
+}
+
+.pesquisa{
+    display: flex;
+    padding: 0px 0px 0px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: black;
+    padding: 5px;
+    width: 25px;
+    height: 25px;
+    margin: 0px 9px 0px 0px;
+    border-style: none;
+}button:hover{
+    scale: 1.1;
+}
+
+#rock{
+    width: 30px;
+    height: 30px;
+    background-image: url(assets/img/lupa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
