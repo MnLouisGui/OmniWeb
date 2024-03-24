@@ -75,9 +75,9 @@ a{
     height: 100000px;
 }
 
-.content{
+.content_oferta{
     height: 100%;
-    width: 75%;
+    width: 100%;
 
     padding: 0px 10px 10px 10px;
     background-color: black;
@@ -97,7 +97,7 @@ a{
 
 .imgoferta{
     align-self: center;
-    max-width: 80%;
+    width: 80%;
     height: auto;
 }
 
@@ -139,7 +139,7 @@ a{
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 0px 12px 0px 12px;
+    padding: 0px 12px 0px 8px;
 }
 
 .text{
