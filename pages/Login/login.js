@@ -17,6 +17,7 @@ function login() {
         window.location.href = "../../index.html";
     }).catch(error => {
         hideLoading();
+        console.log(error)
         alert(getErrorMessage(error));
     });
 }
@@ -26,12 +27,41 @@ function getErrorMessage(error) {
         return "Usuário nao encontrado";
     }if (error.code == "auth/invalid-email") {
         return "Email Inválido";
+    }if(error.code =="auth/missing-password"){
+        return "Email Inválido";
+    }
+    if (error.code == "auth/email-already-in-use") {
+        return "Email já está em uso";
+    }
+    if (error.code == "auth/weak-password") {
+        return "Senha precisa de 6 caracteres";
     }
     return error.message;
 }
 
 function register() {
-    window.location.href = "pages/register/register.html";
+    const email = form.emailReg().value;
+    const password = form.passwordReg().value;
+    firebase.auth().createUserWithEmailAndPassword(
+        email, password
+    ).then(() => {
+        hideLoading();
+        window.location.href = "../../index.html";
+    }).catch(error => {
+        hideLoading();
+        alert(getErrorMessage(error));
+    })
+}
+
+function recoverPassword() {
+    showLoading();
+    firebase.auth().sendPasswordResetEmail(form.emailRec().value).then(() => {
+        hideLoading();
+        alert('Email enviado com sucesso');
+    }).catch(error => {
+        hideLoading();
+        alert("Usuário não encontrado");
+    });
 }
 
 function toggleEmailErrors() {
@@ -68,10 +98,14 @@ function isPasswordValid() {
 
 const form = {
     email: () => document.getElementById("email"),
+    emailRec: () => document.getElementById("emailRec"),
     emailInvalidError: () => document.getElementById("email-invalid-error"),
     emailRequiredError: () => document.getElementById("email-required-error"),
     loginButton: () => document.getElementById("login-button"),
     password: () => document.getElementById("password"),
     passwordRequiredError: () => document.getElementById("password-required-error"),
     recoverPasswordButton: () => document.getElementById("recover-password-button"),
+
+    emailReg: () => document.getElementById('emailReg'),
+    passwordReg: () => document.getElementById('passwordReg')
 } 

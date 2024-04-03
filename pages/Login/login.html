@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="l_img/logo1.png">
     <title>OmniGames</title>
 </head>
-<body >
+<body class="centralize">
   <!--BARRA NAV-->
   <div class="nav">
     <div class="navlogo">
@@ -28,12 +28,12 @@
         <div id="recuperação">
           <form method="post" action="">
             <h1>Recuperação de senha</h1>            
+            <p>
+              <label>Email</label>
+              <input type="email" name="email" id="emailRec" placeholder="seu@email.com" onchange="onChangeEmail()"/>
+            </p>                     
             <p> 
-              <label for="email_cad">Email</label>
-              <input id="email_cad" name="email_cad" required="required" type="email" placeholder="Seuemail@gmail.com"/> 
-            </p>                      
-            <p> 
-              <input type="submit" value="Recuperar"/> 
+              <button type="button" class="solid" id="login-button"  onclick="recoverPassword()">Recuperar</button> 
             </p>          
             <p class="link">  
               Lembrou?
@@ -78,15 +78,15 @@
               <input id="nome_cad" name="nome_cad" required="required" type="text" placeholder="nome" />
             </p>            
             <p> 
-              <label>Seu e-mail</label>
-              <input id="email_cad" name="email_cad" required="required" type="email" placeholder="Seuemail@gmail.com"/> 
+              <label>Email</label>
+              <input type="email" placeholder="seu@email.com" onchange="onChangeEmail()" id="emailReg"/>
             </p>          
             <p> 
               <label>Sua senha</label>
-              <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="senha"/>
+              <input type="password" placeholder="Senha" id="passwordReg" onchange="onChangePassword()"/>
             </p>             
             <p> 
-              <input type="submit" value="Cadastrar"/> 
+              <button type="button" class="solid" id="register-button"  onclick="register()">Registrar</button>
             </p>            
             <p class="link">  
               Já tem conta?
