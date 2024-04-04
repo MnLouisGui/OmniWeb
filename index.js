@@ -5,12 +5,8 @@ firebase.auth().onAuthStateChanged(user => {
         link.getAttribute("href");
         link.setAttribute("href",
             "pages/User/user.html");
-        
+        console.log(user)
     }else{
-        document.getElementById("a").innerHTML="Iniciar Secção";
-        var link = document.querySelector("a");
-        link.getAttribute("href");
-        link.setAttribute("href",
-            "pages/Login/login.html");
+        document.getElementById("a").innerHTML="Iniciar Sessão";
     }
 })
