@@ -1,3 +1,9 @@
+firebase.auth().onAuthStateChanged(user => {
+    if (user) {
+        window.location.href = "../../index.html";
+    }
+})
+
 function onChangeEmail() {
     toggleButtonsDisable();
     toggleEmailErrors();
@@ -28,7 +34,7 @@ function getErrorMessage(error) {
     }if (error.code == "auth/invalid-email") {
         return "Email Inválido";
     }if(error.code =="auth/missing-password"){
-        return "Email Inválido";
+        return "Digite uma senha";
     }
     if (error.code == "auth/email-already-in-use") {
         return "Email já está em uso";

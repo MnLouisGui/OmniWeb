@@ -27,7 +27,7 @@
                 <input class="input_pes" type="text" placeholder="Pesquisar" />
             </div>
             <div class="global">
-                <a class="a2" href="pages/Login/login.html">Iniciar Sessão</a>
+                <a id='a' class="a3" href="pages/Login/login.html"></a>
             </div>
         </div>
     </main>
@@ -66,5 +66,19 @@
             </div>
         </div>
     </footer>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script>
+        const firebaseConfig = {
+          apiKey: "AIzaSyDJPY2liWzFfGVHa-KFDTQVlLX0bB2sciA",
+          authDomain: "login-ce4de.firebaseapp.com",
+          projectId: "login-ce4de",
+          storageBucket: "login-ce4de.appspot.com",
+          messagingSenderId: "1079447080702",
+          appId: "1:1079447080702:web:11c63936eb02a4fc105faf"
+        };
+        firebase.initializeApp(firebaseConfig);
+    </script>
+    <script src="index.js"></script>
 </body>
 </html>
