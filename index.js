@@ -1,6 +1,9 @@
 firebase.auth().onAuthStateChanged(user => {
     if (user) {
-        document.getElementById("a").innerHTML=user.email;
+        var name=user.email;
+        name = name.toString();
+        name = name.replace("@gmail.com", "");
+        document.getElementById("a").innerHTML=name;
         var link = document.getElementById("a");
         link.getAttribute("href");
         link.setAttribute("href",

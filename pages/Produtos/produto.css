@@ -7,7 +7,7 @@
 }
 
 body{
-    background-image: url(assets/img/OMINI.png);
+    background-image: url(../../assets/img/OMINI.png);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -67,39 +67,6 @@ a{
     font-size: 100%;
     text-decoration: none;
 }
-
-.add{
-    background-color: blue;
-    width: 10px;
-    height: 100000px;
-}
-
-.content_oferta{
-    height: 100%;
-    width: 100%;
-
-    padding: 0px 0px 10px 0px;
-    background-color: black;
-    align-items: center;
-    margin: 0px 0px 100px;
-}
-.game{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-.oferta{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.imgoferta{
-    align-self: center;
-    width: 80%;
-    height: auto;
-}
-
 
 .footer{
     display: flex;
@@ -187,7 +154,7 @@ button{
 #rock{
     width: 30px;
     height: 30px;
-    background-image: url(assets/img/lupa.png);
+    background-image: url(../../assets/img/lupa.png);
     background-size: cover;
     background-repeat: no-repeat;
 }

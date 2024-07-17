@@ -3,9 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="user.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo1.png">
+    <title>OmniGames</title>
 </head>
 <body>
-    
+    <button onclick="logoff()">Sair</button>
 </body>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+<script>
+    const firebaseConfig = {
+      apiKey: "AIzaSyDJPY2liWzFfGVHa-KFDTQVlLX0bB2sciA",
+      authDomain: "login-ce4de.firebaseapp.com",
+      projectId: "login-ce4de",
+      storageBucket: "login-ce4de.appspot.com",
+      messagingSenderId: "1079447080702",
+      appId: "1:1079447080702:web:11c63936eb02a4fc105faf"
+    };
+    firebase.initializeApp(firebaseConfig);
+</script>   
+<script src="user.js"></script>
 </html>
