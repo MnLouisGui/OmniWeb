@@ -191,3 +191,14 @@ button{
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+.content_loja{
+    background-color: rgba(0, 0, 0, 0.87);
+    margin: 0px 0px 20px 0px;
+    padding: 10px 10px 0px 10px;
+    width: 80%;
+    height: 100px;
+}.title{
+    color: white;
+    padding: 10px 40px 0px 20px;
+}

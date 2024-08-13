@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+</head>
+<body>
+    <label>ID</label>
+    <input id='id'>
+
+    <label>Nome do jogo</label>
+    <input id="nome">
+
+    <label>valor</label>
+    <input type="number" id="valor">
+
+    <label>Descrição</label>
+    <input id="desc">
+
+    <label>Imagem</label>
+    <input type="file" accept="image/png, image/jpeg" id="foto">
+
+    <button onclick="cadastrar()">Cadastrar</button>
+</body>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-storage-compat.js"></script>
+<script src="bc.js"></script>
+</html>

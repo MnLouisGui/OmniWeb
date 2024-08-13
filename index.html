@@ -34,14 +34,15 @@
     <div class="content_oferta">
         <a href="pages/Produtos/produto.html">
         <div class="oferta">
-            <img class="imgoferta" src="assets/img/oferta2.png">
+            <img id="imgof" class="imgoferta">
         </div>
         </a>
     </div>
     <div class="content_loja">
         <div class="destaque">
             <div class="title">
-                
+                <h2 id="nome">Destaques</h2>
+                <p id="desc"> </p>
             </div>
         </div>
     </div>
@@ -59,25 +60,16 @@
             <div class="rule"></div>
             <div class="social">
                 <a class="social_links" href="https://github.com/MnLouisGui">Github</a>|
-                <a class="social_links" href="mike"><img src="">Twiter</a>|
+                <a class="social_links" href="https://x.com/dois_luis"><img src="">Twiter</a>|
                 <a class="social_links" href="#novidades">Instagram</a>|
-                <a class="social_links" href="#contato">Email</a>
+                <a class="social_links" href="https://mail.google.com/mail/u/1/#inbox">Email</a>
             </div>
         </div>
     </footer>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
-    <script>
-        const firebaseConfig = {
-          apiKey: "AIzaSyDJPY2liWzFfGVHa-KFDTQVlLX0bB2sciA",
-          authDomain: "login-ce4de.firebaseapp.com",
-          projectId: "login-ce4de",
-          storageBucket: "login-ce4de.appspot.com",
-          messagingSenderId: "1079447080702",
-          appId: "1:1079447080702:web:11c63936eb02a4fc105faf"
-        };
-        firebase.initializeApp(firebaseConfig);
-    </script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-storage-compat.js"></script>
     <script src="index.js"></script>
 </body>
 </html>
