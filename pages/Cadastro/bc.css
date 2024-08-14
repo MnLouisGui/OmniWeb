@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Germania+One&family=Protest+Revolution&display=swap');
+
+*{
+    padding: 0;
+    margin: 0;
+    font-family: 'Germania One', system-ui;
+}
+
+body{
+    background-image: url(../../assets/img/OMINI.png);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+a{  
+    text-decoration: none;
+    color: #d4d4d4;
+}
+
+.m_NAV{
+    height: 90px;
+    width: 100%;
+    justify-content: center;
+}
+.nav{
+    flex-wrap: wrap;
+    position: fixed;
+    background-color: black;
+    color: white;
+    
+    display: flex;
+    align-items: center;
+
+    height: 90px;
+    width: 100%;
+}
+
+.navlogo{
+    margin: 0% 8%;
+    display: flex;
+    align-items: center;
+}
+.imglogo, .logo{
+    margin: 0px, 40px, 0px, 0px;
+    padding: 30px, 0px, 0px;
+    width: 80px;
+    height: 80px;
+}
+
+.a1{
+    padding: 47px 7px 7px;
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+}
+.global{
+    line-height: 24px;
+
+    position: absolute;
+    margin: 0px 10px;
+
+    height: 21px;
+    right: 27px;
+    top: 16px;
+}.a2, .a3{
+    color: white;
+    font-size: 100%;
+    text-decoration: none;
+}
+
+.add{
+    background-color: blue;
+    width: 10px;
+    height: 100000px;
+}
+
+.footer{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    color: #d4d4d4;
+
+    padding: 16px 0px 60px;
+    width: 100%;
+    height: auto;
+}.footer_content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    margin: 0px 10px 0px 10px;
+    padding: 16px 0px 0px 0px;
+    width: 100%;
+    height: auto;
+}
+
+.rule{
+    border-top: 1px solid;
+    border-color: #d4d4d4;
+
+    margin: 0px 20px 0px 20px;
+    width: 100%;
+    height: 5px;
+}
+
+.logoF{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0px 12px 0px 8px;
+}
+
+.text{
+    display: flex;
+    align-self: flex-start;
+    flex-direction: column;
+    padding: 0px 0px 20px 10px;
+}
+.social{
+    padding: 10px 0px;
+    font-size: 10px;
+        font-size: 24px;
+        text-decoration: none;
+}.social_links{
+    padding: 0px 10px;
+}
+label{
+    color: white   ;
+    font-size: 18px;
+}
+input[type=text], input[type=file]{
+    justify-self: center;
+    color: white;   
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    background-color: black;
+    padding: 5px 20px 5px 20px;
+    margin: 10px 0px 10px 0px;
+}
+
+.pesquisa{
+    display: flex;
+    padding: 0px 0px 0px 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+button{
+    background-color: rgb(165, 164, 164);
+    padding: 5px;
+    margin: 0px 9px 10px 0px;
+    width: 100px;
+    height: 25px;
+    border-style: none;
+}button:hover{
+    scale: 1.1;
+}
+
+#rock{
+    width: 30px;
+    height: 30px;
+    background-image: url(../../assets/img/lupa.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.box_cadastro{
+    display: flex   ;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.87);
+    margin: 30px 0px 30px 0px;
+    padding: 10px 10px 0px 10px;
+}.title{
+    color: white;
+    font-style: oblique;
+    font-size: 26px;
+    padding: 5px 40px 5px 0px;
+}

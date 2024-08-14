@@ -3,25 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <link rel="stylesheet" href="bc.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/img/logo1.png">
+    <title>Cadastro </title>
 </head>
 <body>
-    <label>ID</label>
-    <input id='id'>
+    <main class="m_NAV">
+        <div class="nav">
+            <div class="navlogo">
+                <div class="logo">
+                    <img class="imglogo" src="../../assets/img/logo1.png">
+                </div>
+                <h1>OMNIGAMES</h1>
+            </div>
+            <div class="navigation">
+                <a class='a1' href="../../index.html">Loja</a>
+                <a class='a1' href="#Carrinho">Carrinho</a>
+                <a class='a1' href="#novidades">Novidades</a>
+                <a class='a1' href="#footer">Contato</a>
+            </div>
+            <div class="pesquisa">
+                <button id="rock"></button>
+                <input class="input_pes" type="text" placeholder="Pesquisar" />
+            </div>
+            <div class="global">
+                <a id='a' class="a3" href="../pages/Login/login.html"></a>
+            </div>
+        </div>
+    </main>
+    <div class="box_bc">
+        <div class="box_cadastro">
+            <div class="title">
+                <h2 id="nome">Cadastro</h2>
+            </div>
+            <label>ID</label>
+            <input type="text" id='id'>
 
-    <label>Nome do jogo</label>
-    <input id="nome">
+            <label>Nome do jogo</label>
+            <input type="text" id="nome">
 
-    <label>valor</label>
-    <input type="number" id="valor">
+            <label>valor</label>
+            <input type="text" type="number" id="valor">
 
-    <label>Descrição</label>
-    <input id="desc">
+            <label>Descrição</label>
+            <input  type="text"     id="desc">
 
-    <label>Imagem</label>
-    <input type="file" accept="image/png, image/jpeg" id="foto">
+            <label>Imagem</label>
+            <input type="file" accept="image/png, image/jpeg" id="foto">
 
-    <button onclick="cadastrar()">Cadastrar</button>
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer_content">
+            <div class="rule"></div>
+                <div class="logoF">
+                    <h1 style="font-size: 30Px;">OMNI</h1>
+                    <img class="imglogo" src="assets/img/foooter.png" style="height: 50px; width: 90px;">
+                </div>
+            <div class="text">
+                <p>© 2024 OMNI Corporation. Todos os direitos reservados. Todas as marcas são propriedade dos seus respectivos dono no Brasil e em outros países.</p>
+                <p>IVA incluso em todos os preços onde aplicável.</p>
+            </div>
+            <div class="rule"></div>
+            <div class="social">
+                <a class="social_links" href="https://github.com/MnLouisGui">Github</a>|
+                <a class="social_links" href="https://x.com/dois_luis"><img src="">Twiter</a>|
+                <a class="social_links" href="#novidades">Instagram</a>|
+                <a class="social_links" href="https://mail.google.com/mail/u/1/#inbox">Email</a>
+            </div>
+        </div>
+    </footer>   
 </body>
 <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
 <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
