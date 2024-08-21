@@ -207,5 +207,11 @@ button{
 }
 
 #valor, .nome{
-    font-size: 14px;
+    font-size: 20px;
+}
+.infor{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 150px;
 }

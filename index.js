@@ -35,7 +35,8 @@ photoRef.getDownloadURL(photoRef).then((url) => {
     console.log(url)
     const img = document.getElementById("produto_img");
     img.src = url;
-    img.style.width="50%";
+    img.style.width="310px";
+    img.style.height="148px";
     
 }).catch((error)=>{
     console.log(error)
@@ -46,9 +47,9 @@ db.collection("Jogos").doc("8").get().then(function (doc){
         console.log("Document data:", doc.data());
         const dados=doc.data();
 
-        const nome = document.getElementById("nome").value=dados.nome;
+        const nome = document.getElementById("nome").innerHTML = dados.nome;
         console.log(dados.nome)
-        const valor = document.getElementById("valor").value=dados.valor;
+        const valor = document.getElementById("valor").innerHTML = `R$: ${dados.valor}`;
     }else{
 
     }
