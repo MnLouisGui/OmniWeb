@@ -38,7 +38,7 @@ function cadastrar(){
 
     //upload da foto
     const storageref=firebase.storage().ref();
-    const fotoref = storageref.child(`images/${nome}`)
+    const fotoref = storageref.child(`images/${nome}.jpeg`)
 
     fotoref.put(foto).then(snapshot => {
         console.log(fotoref)
@@ -69,18 +69,22 @@ function pesquisar(){
             const valor = document.getElementById("valor_p").value = dados.valor;
             const nome = document.getElementById("nome_p").value = dados.nome;
 
-            
+            const div = document.getElementById("image");
             const photoPath = `images/${dados.foto}.jpeg`;
-            console.log(photoPath);
-            const photoRef = storage.ref(photoPath);
+            var photoRef = storage.ref(photoPath);
+            console.log(photoRef);
 
-            photoRef.getDownloadURL().then((url) => {
-                const img = document.getElementById("image");
-                img.scr=url;
-            
+            photoRef.getDownloadURL(photoRef).then((url) => {
+                console.log(url)
+                const img = document.getElementById("img");
+                img.src = url;
+                img.style.width="100%";
+                
+                div.appendChild(img);
             }).catch((error)=>{
                 console.log(error)
             });
+
         } else {
             // doc.data() will be undefined in this case
             alert("Esse documento não existe");
