@@ -197,8 +197,15 @@ button{
     margin: 0px 0px 20px 0px;
     padding: 10px 10px 0px 10px;
     width: 80%;
-    height: 100px;
 }.title{
     color: white;
     padding: 10px 40px 0px 20px;
+    margin-bottom: 10px;
+}#nome{
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+}
+
+#valor, .nome{
+    font-size: 14px;
 }

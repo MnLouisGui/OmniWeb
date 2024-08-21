@@ -27,3 +27,31 @@ firebase.auth().onAuthStateChanged(user => {
         document.getElementById("a").innerHTML="Iniciar Sessão";
     }
 })
+
+const photoPath = `images/Hades.jpeg`;
+var photoRef = storage.ref(photoPath);
+
+photoRef.getDownloadURL(photoRef).then((url) => {
+    console.log(url)
+    const img = document.getElementById("produto_img");
+    img.src = url;
+    img.style.width="50%";
+    
+}).catch((error)=>{
+    console.log(error)
+});
+
+db.collection("Jogos").doc("8").get().then(function (doc){
+    if (doc.exists) {
+        console.log("Document data:", doc.data());
+        const dados=doc.data();
+
+        const nome = document.getElementById("nome").value=dados.nome;
+        console.log(dados.nome)
+        const valor = document.getElementById("valor").value=dados.valor;
+    }else{
+
+    }
+}).catch((error) => {
+    console.log("Error getting document:", error);
+});
