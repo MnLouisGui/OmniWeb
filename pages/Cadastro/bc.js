@@ -54,6 +54,12 @@ function cadastrar(){
         })
     })
     alert("Produto cadastrado")
+
+    const nomee = document.getElementById("nome").value="";
+    const idd = document.getElementById("id").value="";
+    const valorr = document.getElementById("valor").value=0;
+    const descc = document.getElementById("desc").value="";
+    const fotoo = document.getElementById("foto").value="";
 }
 
 function pesquisar(){
