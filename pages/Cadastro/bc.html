@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="bc.css">
     <link rel="icon" type="image/x-icon" href="../../assets/img/logo1.png">
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-storage-compat.js"></script>
+    <script src="bc.js"></script>
+
     <title>Cadastro </title>
 </head>
 <body>
@@ -27,31 +33,54 @@
                 <input class="input_pes" type="text" placeholder="Pesquisar" />
             </div>
             <div class="global">
-                <a id='a' class="a3" href="../pages/Login/login.html"></a>
+                <a id='a' class="a3" href="../Login/login.html"></a>
             </div>
         </div>
     </main>
     <div class="box_bc">
         <div class="box_cadastro">
-            <div class="title">
-                <h2 id="nome">Cadastro</h2>
-            </div>
+
+            <h2 class="title">Cadastro</h2>
             <label>ID</label>
-            <input type="text" id='id'>
-
+            <input id='id'>
+        
             <label>Nome do jogo</label>
-            <input type="text" id="nome">
-
+            <input id="nome">
+        
             <label>valor</label>
-            <input type="text" type="number" id="valor">
-
+            <input type="number" id="valor">
+        
             <label>Descrição</label>
-            <input  type="text"     id="desc">
-
+            <textarea id="desc"></textarea>
+        
             <label>Imagem</label>
             <input type="file" accept="image/png, image/jpeg" id="foto">
-
+        
             <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+        <div class="box_pesquisa">
+            
+            <h2 class="title">Pesquisar e Alterar</h2>
+            <label>ID</label>
+            <input id='id_p'>
+        
+            <label>Nome do jogo</label>
+            <input id="nome_p">
+        
+            <label>valor</label>
+            <input type="number" id="valor_p">
+        
+            <label>Descrição</label>
+            <textarea id="desc_p"></textarea>
+        
+            <label>Imagem</label>
+            <img id="image">
+            
+            <div class="button_container">
+                <button onclick="pesquisar()">Pesquisar</button>
+                <button onclick="alterar()">Alterar</button>
+            </div>
+            
         </div>
     </div>
     
@@ -60,7 +89,7 @@
             <div class="rule"></div>
                 <div class="logoF">
                     <h1 style="font-size: 30Px;">OMNI</h1>
-                    <img class="imglogo" src="assets/img/foooter.png" style="height: 50px; width: 90px;">
+                    <img class="imglogo" src="../../assets/img/foooter.png" style="height: 50px; width: 90px;">
                 </div>
             <div class="text">
                 <p>© 2024 OMNI Corporation. Todos os direitos reservados. Todas as marcas são propriedade dos seus respectivos dono no Brasil e em outros países.</p>
@@ -76,9 +105,4 @@
         </div>
     </footer>   
 </body>
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-firestore-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-storage-compat.js"></script>
-<script src="bc.js"></script>
 </html>

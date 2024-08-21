@@ -33,6 +33,7 @@ function cadastrar(){
     const id = document.getElementById("id").value;
     const valor = document.getElementById("valor").value;
     const desc = document.getElementById("desc").value;
+    
     const foto = document.getElementById("foto").files[0];
 
     //upload da foto
@@ -40,8 +41,71 @@ function cadastrar(){
     const fotoref = storageref.child(`images/${nome}`)
 
     fotoref.put(foto).then(snapshot => {
+        console.log(fotoref)
         return snapshot.ref.getDownloadURL();
     }).then(fotoURL =>{
+        
+        db.collection("Jogos").doc(id).set({
+            desc: desc,
+            valor: valor,
+            foto: nome,
+            nome: nome,
+            id: id
+        })
+    })
+    alert("Produto cadastrado")
+}
+
+function pesquisar(){
+    const id = document.getElementById("id_p").value;
+
+    
+    db.collection("Jogos").doc(id).get().then(function (doc){
+        if (doc.exists) {
+            console.log("Document data:", doc.data());
+            const dados=doc.data();
+            console.log(dados.desc);
+            const desc = document.getElementById("desc_p").value = dados.desc;
+            const valor = document.getElementById("valor_p").value = dados.valor;
+            const nome = document.getElementById("nome_p").value = dados.nome;
+
+            
+            const photoPath = `images/${dados.foto}.jpeg`;
+            console.log(photoPath);
+            const photoRef = storage.ref(photoPath);
+
+            photoRef.getDownloadURL().then((url) => {
+                const img = document.getElementById("image");
+                img.scr=url;
+            
+            }).catch((error)=>{
+                console.log(error)
+            });
+        } else {
+            // doc.data() will be undefined in this case
+            alert("Esse documento não existe");
+        }
+    }).catch((error) => {
+        console.log("Error getting document:", error);
+    });
+}
+
+function alterar(){
+    const nome = document.getElementById("nome_p").value;
+    const id = document.getElementById("id_p").value;
+    const valor = document.getElementById("valor_p").value;
+    const desc = document.getElementById("desc_p").value;
+    
+
+    //upload da foto
+    const storageref=firebase.storage().ref();
+    const fotoref = storageref.child(`images/${nome}`)
+
+    fotoref.put(foto).then(snapshot => {
+        console.log(fotoref)
+        return snapshot.ref.getDownloadURL();
+    }).then(fotoURL =>{
+        
         db.collection("Jogos").doc(id).set({
             desc: desc,
             valor: valor,
