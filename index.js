@@ -37,46 +37,47 @@ firebase.auth().onAuthStateChanged(user => {
     }
 })
 
+var ndoc=0;
 //Contador de Docs
-db.collection('metadata').doc('stats').set({
-    count: 23
-});
-const nodocs = true;
+db.collection('metadata').doc('stats').get().then(function (doc){
+    if (doc.exists) {
+        const dados=doc.data();
+        console.log(dados.count)
+        ndoc=dados.count;
+    }
+    var ii=0;
+    for (let i; ii<ndoc ;i++) {
+        ii++;
+        var id = ii;
+        console.log(id);
 
-for (let i = 23; nodocs==false; i++) {
-    var id = i;
-    console.log(id);
-
-    db.collection("Jogos").doc(""+id).get().then(function (doc){
-        if (doc.exists) {
-            console.log("Document data:", doc.data());
-            const dados=doc.data();
-    
-            const nome = document.getElementById("nome").innerHTML = dados.nome;
-            console.log(dados.nome)
-            const valor = document.getElementById("valor").innerHTML = `R$: ${dados.valor}`;
-            document.getElementById("valor").style.fontSize="100%"
-            document.getElementById("nome").style.fontSize="100%"
-    
-            const photoPath = `images/${dados.nome}.jpeg`;
-            var photoRef = storage.ref(photoPath);
-            photoRef.getDownloadURL(photoRef).then((url) => {
-                console.log(url)
-                const img = document.getElementById("produto_img");
-                img.src = url;
-                img.style.width="40%";
-                img.style.height="20%";
+        db.collection("Jogos").doc(""+id).get().then(function (doc){
+            if (doc.exists) {
+                console.log("Document data:", doc.data());
+                const dados=doc.data();
                 
-            }).catch((error)=>{
-                console.log(error)
-            });
-    
-        }else{
-            alert("Esse documento não existe");
-            nodocs=false;
-            return;
-        }
-    }).catch((error) => {
-        console.log("Error getting document:", error);
-    });
-}
+                const div = document.getElementById("tt");
+
+                const photoPath = `images/${dados.nome}.jpeg`;
+                var photoRef = storage.ref(photoPath);
+                photoRef.getDownloadURL(photoRef).then((url) => {
+                    console.log(url);
+                    const img = document.createElement("img");
+                    img.src = url;
+                    img.style.width="20rem";
+                    img.style.height="10rem";
+                    img.style.margin="10px";
+
+                    div.appendChild(img);
+                }).catch((error)=>{
+                    console.log(error)
+                });
+
+            }else{
+                alert("Esse documento não existe: "+ndoc);
+            }
+        }).catch((error) => {
+            console.log("Error getting document:", error);
+        });
+    }
+});

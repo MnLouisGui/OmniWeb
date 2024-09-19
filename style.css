@@ -195,7 +195,7 @@ button{
 .content_loja{
     background-color: rgba(0, 0, 0, 0.87);
     margin: 0px 0px 20px 0px;
-    padding: 10px 10px 0px 10px;
+    padding: 10px 10px 10px 10px;
     width: 80%;
 }.title{
     color: white;
@@ -217,5 +217,7 @@ button{
 }
 .destaque{
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
+    justify-content: space-around;
 }

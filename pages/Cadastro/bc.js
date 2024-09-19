@@ -24,7 +24,8 @@ const firebaseConfig = {
             "./pages/User/user.html");
         console.log(user)
     }else{
-        document.getElementById("a").innerHTML="Iniciar Sessão";
+        alert('Apenas o administrador')
+        window.location.replace("../../index.html");
     }
 })
   
@@ -86,7 +87,7 @@ function pesquisar(){
 
             photoRef.getDownloadURL(photoRef).then((url) => {
                 console.log(url)
-                const img = document.getElementById("img");
+                const img = document.createElement("img");
                 img.src = url;
                 img.style.width="100%";
                 
