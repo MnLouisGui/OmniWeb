@@ -215,3 +215,7 @@ button{
     justify-content: space-between;
     width: 150px;
 }
+.destaque{
+    display: flex;
+    flex-direction: row;
+}

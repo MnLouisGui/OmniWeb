@@ -10,6 +10,10 @@ const firebaseConfig = {
 
   firebase.auth().onAuthStateChanged(user => {
     if (user) {
+        if (user.email != "admin@gmail.com"){
+            alert('Você não é o administrador')
+            window.location.replace("../../index.html");
+        }
         var name=user.email;
         name = name.toString();
         name = name.replace("@gmail.com", "");
@@ -17,7 +21,7 @@ const firebaseConfig = {
         var link = document.getElementById("a");
         link.getAttribute("href");
         link.setAttribute("href",
-            "pages/User/user.html");
+            "./pages/User/user.html");
         console.log(user)
     }else{
         document.getElementById("a").innerHTML="Iniciar Sessão";
