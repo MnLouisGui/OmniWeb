@@ -21,7 +21,7 @@ const firebaseConfig = {
         var link = document.getElementById("a");
         link.getAttribute("href");
         link.setAttribute("href",
-            "./pages/User/user.html");
+            "../pages/User/user.html");
         console.log(user)
     }else{
         alert('Apenas o administrador')
@@ -32,6 +32,7 @@ const firebaseConfig = {
   //Tabelas
   const db = firebase.firestore();
   const storage = firebase.storage();
+  const statsRef = db.collection('metadata').doc('stats');
 
 function cadastrar(){
     const nome = document.getElementById("nome").value;
@@ -58,6 +59,8 @@ function cadastrar(){
             id: id
         })
     })
+
+    contador();
     alert("Produto cadastrado")
 
     const nomee = document.getElementById("nome").value="";
@@ -65,6 +68,12 @@ function cadastrar(){
     const valorr = document.getElementById("valor").value=0;
     const descc = document.getElementById("desc").value="";
     const fotoo = document.getElementById("foto").value="";
+}
+
+function contador(){
+    return statsRef.update({
+        document_count: firebase.firestore.FieldValue.increment(1)
+    })
 }
 
 function pesquisar(){
@@ -87,7 +96,7 @@ function pesquisar(){
 
             photoRef.getDownloadURL(photoRef).then((url) => {
                 console.log(url)
-                const img = document.createElement("img");
+                const img = document.getElementById("img");
                 img.src = url;
                 img.style.width="100%";
                 

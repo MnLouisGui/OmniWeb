@@ -41,16 +41,22 @@ var ndoc=0;
 //Contador de Docs
 db.collection('metadata').doc('stats').get().then(function (doc){
     if (doc.exists) {
-        const dados=doc.data();
-        console.log(dados.count)
-        ndoc=dados.count;
+        const dados=doc.data().document_count
+        console.log(doc.data)
+        console.log(dados);
+        ndoc=dados;
     }
     var ii=0;
-    for (let i; ii<ndoc ;i++) {
+    var oc=1;
+    for (var i; ii<ndoc ;i++) {
         ii++;
         var id = ii;
-        console.log(id);
-
+        console.log(ii);
+        const produto = document.createElement("a");
+        produto.classList.add('produto');
+        produto.onclick = function() {
+            pgproduto(oc++);
+        };
         db.collection("Jogos").doc(""+id).get().then(function (doc){
             if (doc.exists) {
                 console.log("Document data:", doc.data());
@@ -66,13 +72,20 @@ db.collection('metadata').doc('stats').get().then(function (doc){
                     img.src = url;
                     img.style.width="20rem";
                     img.style.height="10rem";
-                    img.style.margin="10px";
+                    img.style.margin="5px";
 
-                    div.appendChild(img);
+                    produto.appendChild(img);
                 }).catch((error)=>{
                     console.log(error)
                 });
-
+                const infor = document.createElement("div");
+                infor.classList.add('infor');
+                infor.innerHTML += `
+                    <h3>${dados.nome}<h3>
+                    <h3>R$${(parseFloat(dados.valor)).toFixed(2)}<h3>
+                `;
+                produto.appendChild(infor); 
+                div.appendChild(produto);
             }else{
                 alert("Esse documento não existe: "+ndoc);
             }
@@ -81,3 +94,8 @@ db.collection('metadata').doc('stats').get().then(function (doc){
         });
     }
 });
+var id_escolhido;
+function pgproduto(id){
+    id_escolhido=id;
+    window.location.replace("pages/Produtos/produto.html");
+}
